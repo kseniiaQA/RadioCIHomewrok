@@ -21,12 +21,7 @@ class RadioTest {
         assertFalse(radio.on);
     }
 
-    @Test
-    @Disabled
-    public void shouldThrowNPE() {
-        Radio radio = new Radio();
-        assertEquals(0, radio.name.length());
-    }
+
 
     @Test
     public void shouldChangeFields() {
@@ -34,5 +29,12 @@ class RadioTest {
         assertEquals(0, radio.currentStation);
         radio.currentStation = -10;
         assertEquals(-10, radio.currentStation);
+    }
+
+    @Test
+    @Disabled
+    public void shouldThrowNPE() {
+        Radio radio = new Radio();
+        assertEquals(0, radio.name.length());
     }
 }

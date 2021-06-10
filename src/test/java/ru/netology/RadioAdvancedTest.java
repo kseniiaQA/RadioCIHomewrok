@@ -9,15 +9,7 @@ class RadioAdvancedTest {
 
 
 
-    @Test
-    public void shouldMaxStation()  {
-        RadioAdvanced radio = new RadioAdvanced();
-        int currentStation = 10;
-        radio.setMaxStation(currentStation);
-        radio.changeOnNextRadioStation();
-        int  expected=10;
-        assertEquals(expected, radio.getMaxStation());
-    }
+
 
     @Test
     public void shouldMinStation()  {
@@ -27,6 +19,15 @@ class RadioAdvancedTest {
         radio.changeOnPreviousRadioStation();
         int  expected=0;
         assertEquals(expected, radio.getMinStation());
+    }
+    @Test
+    public void shouldMaxStation()  {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 10;
+        radio.setMaxStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int  expected=10;
+        assertEquals(expected, radio.getMaxStation());
     }
 
     @Test
