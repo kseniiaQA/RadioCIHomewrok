@@ -26,7 +26,7 @@ class RadioAdvancedTest {
         int currentStation = 10;
         radio.setMaxStation(currentStation);
         radio.changeOnNextRadioStation();
-        int  expected=10;
+        int  expected=9;
         assertEquals(expected, radio.getMaxStation());
     }
 
@@ -36,7 +36,7 @@ class RadioAdvancedTest {
         int currentStation = 9;
         radio.setMaxVolumeLevel(currentStation);
         radio.volumeUpForOne();
-        int  expected=9;
+        int  expected=10;
         assertEquals(expected, radio.getMaxVolumeLevel());
     }
 
@@ -96,7 +96,7 @@ class RadioAdvancedTest {
         int currentStation = 0;
         radio.setCurrentStation(currentStation);
         radio.changeOnPreviousRadioStation();
-        int expected = 9;
+        int expected = 0;
         assertEquals(expected, radio.getCurrentStation());
     }
 
@@ -121,7 +121,7 @@ class RadioAdvancedTest {
         int currentStation = 9;
         radio.setCurrentStation(currentStation);
         radio.changeOnNextRadioStation();
-        int expected = 0;
+        int expected = 9;
         assertEquals(expected, radio.getCurrentStation());
     }
 
