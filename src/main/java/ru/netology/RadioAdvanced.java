@@ -1,6 +1,6 @@
 package ru.netology;
 
-public class RadioAdvanced {
+public class RadioAdvanced<currentStation, minStation> {
     private String name;
     private int currentStation = 0;
     private int maxStation = 9;
@@ -23,14 +23,15 @@ public class RadioAdvanced {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation > maxStation) {
-            return;
+
+            if (currentStation > maxStation) {
+                return;
+            }
+            if (currentStation < minStation) {
+                return;
+            }
+            this.currentStation = currentStation;
         }
-        if (currentStation < minStation) {
-            return;
-        }
-        this.currentStation = currentStation;
-    }
 
     public int getMaxStation() {
         return maxStation;
@@ -97,23 +98,28 @@ public class RadioAdvanced {
         }
     }
 
-    public void changeOnPreviousRadioStation() {
-        if (currentStation == minStation) {
-            this.currentStation = minStation;
-            return;
+    public int changeOnPreviousRadioStation() {
+            if (currentStation > minStation) {
+                currentStation = currentStation - 1;
+            }
+            else if(currentStation == 0) {
+                currentStation = maxStation;
+            }
+            return currentStation;
         }
-        this.currentStation--;
+
+    public int changeOnNextRadioStation() {
+        if (currentStation < maxStation | currentStation == minStation) {
+            currentStation = currentStation + 1;
+        }
+        if (currentStation == 9) {
+            currentStation = 0;
+        }
+        return currentStation;
+
     }
 
-    public void changeOnNextRadioStation() {
-        if (currentStation == maxStation) {
-            this.currentStation = maxStation;
-            return;
+        public boolean isOn() {
+            return on;
         }
-        this.currentStation++;
     }
-
-    public boolean isOn() {
-        return on;
-    }
-}

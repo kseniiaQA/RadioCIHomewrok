@@ -17,17 +17,17 @@ class RadioAdvancedTest {
         int currentStation = 0;
         radio.setMinStation(currentStation);
         radio.changeOnPreviousRadioStation();
-        int  expected=0;
-        assertEquals(expected, radio.getMinStation());
+        int  expected=9;
+        assertEquals(expected, radio.getCurrentStation());
     }
     @Test
     public void shouldMaxStation()  {
         RadioAdvanced radio = new RadioAdvanced();
-        int currentStation = 10;
+        int currentStation = 9;
         radio.setMaxStation(currentStation);
         radio.changeOnNextRadioStation();
-        int  expected=9;
-        assertEquals(expected, radio.getMaxStation());
+        int  expected=1;
+        assertEquals(expected, radio.getCurrentStation());
     }
 
     @Test
@@ -54,10 +54,10 @@ class RadioAdvancedTest {
     @Test
     void shouldChangeOnNextRadioStation() {
         RadioAdvanced radio = new RadioAdvanced();
-        int currentStation = 8;
+        int currentStation = 5;
         radio.setCurrentStation(currentStation);
         radio.changeOnNextRadioStation();
-        int expected = 9;
+        int expected = 6;
         assertEquals(expected, radio.getCurrentStation());
     }
 
@@ -91,12 +91,12 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void shouldChangeOnPreviousRadioStationIfStationIsMin() {
+    void shouldChangeOnMaxRadioStationIfStationIsMin() {
         RadioAdvanced radio = new RadioAdvanced();
         int currentStation = 0;
         radio.setCurrentStation(currentStation);
         radio.changeOnPreviousRadioStation();
-        int expected = 0;
+        int expected = 9;
         assertEquals(expected, radio.getCurrentStation());
     }
 
@@ -116,12 +116,12 @@ class RadioAdvancedTest {
 
 
     @Test
-    void shouldNotChangeOnNextRadioStationIfStationIsMax() {
+    void shouldChangeOnPreviousRadioStationIfStationIsMax() {
         RadioAdvanced radio = new RadioAdvanced();
         int currentStation = 9;
         radio.setCurrentStation(currentStation);
         radio.changeOnNextRadioStation();
-        int expected = 9;
+        int expected = 0;
         assertEquals(expected, radio.getCurrentStation());
     }
 
