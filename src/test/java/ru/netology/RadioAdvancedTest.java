@@ -8,18 +8,42 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioAdvancedTest {
 
 
-
-
+    private int minStation;
 
     @Test
     public void shouldMinStation()  {
         RadioAdvanced radio = new RadioAdvanced();
-        int currentStation = 0;
-        radio.setMinStation(currentStation);
+      
+        int currentStation = 7;
+        radio.setCurrentStation(currentStation);
         radio.changeOnPreviousRadioStation();
-        int  expected=9;
+        int  expected=6;
         assertEquals(expected, radio.getCurrentStation());
     }
+    @Test
+    public void shouldNextStation()  {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 0;
+        radio.setMinStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int  expected=1;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+
+
+
+
+
+    @Test
+    public void shouldIncreaseStation()  {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 0;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int  expected=1;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+
     @Test
     public void shouldMaxStation()  {
         RadioAdvanced radio = new RadioAdvanced();
@@ -105,11 +129,11 @@ class RadioAdvancedTest {
     @Test
     void shouldChangeOnPreviousRadioStation() {
         RadioAdvanced radio = new RadioAdvanced();
-        int currentStation = 1;
+        int currentStation = 0;
         radio.setCurrentStation(currentStation);
         radio.changeOnPreviousRadioStation();
-        int expected = 0;
-        assertEquals(expected, radio.getCurrentStation());
+        int expected = 9;
+        assertEquals(expected, radio.getMaxStation());
     }
 
 

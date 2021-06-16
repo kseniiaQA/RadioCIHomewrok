@@ -102,7 +102,7 @@ public class RadioAdvanced<currentStation, minStation> {
             if (currentStation > minStation) {
                 currentStation = currentStation - 1;
             }
-            else if(currentStation == 0) {
+            if(currentStation == 0) {
                 currentStation = maxStation;
             }
             return currentStation;
