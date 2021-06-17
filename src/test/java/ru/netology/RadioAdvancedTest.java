@@ -86,6 +86,24 @@ class RadioAdvancedTest {
     }
 
     @Test
+    void shouldChangeOnNextRadioStationMin() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 0;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 1;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+    @Test
+    void shouldChangeOnNextRadioStationMax() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 9;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 0;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+    @Test
     public void shouldGetAndSet() {
         RadioAdvanced radio = new RadioAdvanced();
         String expected = "radio";
@@ -146,7 +164,15 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getCurrentStation());
     }
 
-
+    @Test
+    void shouldChangeOnPreviousRadioStationIsMax() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 9;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnPreviousRadioStation();
+        int expected = 8;
+        assertEquals(expected, radio.getCurrentStation());
+    }
 
     @Test
     void shouldChangeOnPreviousRadioStationIfStationIsMin() {
