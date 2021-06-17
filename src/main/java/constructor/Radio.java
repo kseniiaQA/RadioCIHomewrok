@@ -6,10 +6,10 @@ package constructor;
       public int currentStation;
         String name;
 
-        int maxStation = 9;
+        int maxStation = 10;
         int minStation = 0;
         int currentVolume;
-        int maxVolumeLevel = 10;
+        int maxVolumeLevel = 100;
         int minVolumeLevel = 0;
         boolean on;
 
