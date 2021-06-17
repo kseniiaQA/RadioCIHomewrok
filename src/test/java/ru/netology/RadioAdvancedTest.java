@@ -1,5 +1,6 @@
 package ru.netology;
 
+import constructor.Radio;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +31,10 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getCurrentStation());
     }
 
+    @Test
+    public void shouldUseRadio() {
+        RadioAdvanced radio = new RadioAdvanced();
+    }
 
 
 
@@ -229,12 +234,7 @@ class RadioAdvancedTest {
         assertFalse(Radio.isOn());
     }
 
-    @Test
-    @Disabled
-    public void shouldThrowNPE() {
-        Radio radio = new Radio();
-        assertEquals(0, radio.name.length());
-    }
+
 
     @Test
     public void shouldChangeFields() {
