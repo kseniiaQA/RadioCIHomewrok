@@ -3,6 +3,7 @@ package constructor;
 import constructor.Radio;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import ru.netology.RadioAdvanced;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +32,5 @@ class RadioTest {
         assertEquals(0, radio.currentVolume);
         assertFalse(radio.on);
     }
+
 }
-
-
