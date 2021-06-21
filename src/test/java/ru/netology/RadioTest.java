@@ -1,6 +1,6 @@
-package constructor;
+package ru.netology;
 
-import constructor.Radio;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.netology.RadioAdvanced;
@@ -9,15 +9,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
-    private String name;
-    private int maxStation;
+    private String name="Radio";
+    private int maxStation=9;
     private int currentVolume;
-    private int maxVolumeLevel;
-    private int minVolumeLevel;
+    private int maxVolumeLevel=100;
+    private int minVolumeLevel=0;
     private int currentStation;
-    private int minStation;
+    private int minStation=0;
     private boolean on;
 
+
+
+    public RadioTest(String name, int maxStation, int currentVolume, int maxVolumeLevel, int minVolumeLevel, int currentStation, int minStation, boolean on) {
+        this.name = "Radio";
+        this.maxStation = 9;
+        this.currentVolume=0 ;
+        this.maxVolumeLevel = 100;
+        this.minVolumeLevel = 0;
+        this.currentStation = 0;
+        this.minStation = 0;
+        this.on = on;
+    }
 
     @Test
     public void shouldCreate1() {

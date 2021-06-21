@@ -1,6 +1,5 @@
 package ru.netology;
 
-import constructor.Radio;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
