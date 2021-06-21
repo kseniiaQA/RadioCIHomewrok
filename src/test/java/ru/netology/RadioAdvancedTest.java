@@ -30,8 +30,17 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getCurrentStation());
     }
 
+    @Test
+    public void shouldNextStation2() {
 
+        RadioAdvanced radio = new RadioAdvanced();
 
+        int currentStation = 8;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 9;
+        assertEquals(expected, radio.getCurrentStation());
+    }
 
 
     @Test
