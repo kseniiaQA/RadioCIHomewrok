@@ -24,14 +24,14 @@ public class RadioAdvanced{
 
     public void setCurrentStation(int currentStation) {
 
-            if (currentStation > maxStation) {
-                return;
-            }
-            if (currentStation < minStation) {
-                return;
-            }
-            this.currentStation = currentStation;
+        if (currentStation > maxStation) {
+            return;
         }
+        if (currentStation < minStation) {
+            return;
+        }
+        this.currentStation = currentStation;
+    }
 
     public int getMaxStation() {
         return maxStation;
@@ -99,27 +99,29 @@ public class RadioAdvanced{
     }
 
     public int changeOnPreviousRadioStation() {
-            if (currentStation > minStation) {
-                currentStation = currentStation - 1;
-            }
-            if(currentStation == 0) {
-                currentStation = maxStation;
-            }
-            return currentStation;
+        if (currentStation <= minStation) {
+            currentStation = maxStation;
+            return maxStation;
         }
+        currentStation--;
+
+        return currentStation;
+    }
+
 
     public int changeOnNextRadioStation() {
-        if (currentStation < maxStation | currentStation == minStation) {
-            currentStation = currentStation + 1;
+        if (currentStation >= maxStation) {
+            currentStation = minStation;
+            return minStation;
         }
-        if (currentStation == 9) {
-            currentStation = 0;
-        }
+        currentStation++;
+
         return currentStation;
-
     }
 
-        public boolean isOn() {
-            return on;
-        }
+
+
+    public boolean isOn() {
+        return on;
     }
+}

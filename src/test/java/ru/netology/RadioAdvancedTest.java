@@ -30,12 +30,16 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getCurrentStation());
     }
 
-    @Test
-    public void shouldUseRadio() {
+ 
+
         RadioAdvanced radio = new RadioAdvanced();
+
+        int currentStation = 8;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 9;
+        assertEquals(expected, radio.getCurrentStation());
     }
-
-
 
 
     @Test
@@ -90,6 +94,24 @@ class RadioAdvancedTest {
     }
 
     @Test
+    void shouldChangeOnNextRadioStationMin() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 0;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 1;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+    @Test
+    void shouldChangeOnNextRadioStationMax() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 9;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnNextRadioStation();
+        int expected = 0;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+    @Test
     public void shouldGetAndSet() {
         RadioAdvanced radio = new RadioAdvanced();
         String expected = "radio";
@@ -140,16 +162,33 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getMaxStation());
     }
 
-
-
+    @Test
+    void shouldChangeOnPreviousRadioStation1() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 7;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnPreviousRadioStation();
+        int expected = 6;
+        assertEquals(expected, radio.getCurrentStation());
+    }
 
     @Test
-    void shouldChangeOnPreviousRadioStationIfStationIsMax() {
+    void shouldChangeOnPreviousRadioStationIsMax() {
         RadioAdvanced radio = new RadioAdvanced();
         int currentStation = 9;
         radio.setCurrentStation(currentStation);
-        radio.changeOnNextRadioStation();
-        int expected = 0;
+        radio.changeOnPreviousRadioStation();
+        int expected = 8;
+        assertEquals(expected, radio.getCurrentStation());
+    }
+
+    @Test
+    void shouldChangeOnPreviousRadioStationIfStationIsMin() {
+        RadioAdvanced radio = new RadioAdvanced();
+        int currentStation = 0;
+        radio.setCurrentStation(currentStation);
+        radio.changeOnPreviousRadioStation();
+        int expected = 9;
         assertEquals(expected, radio.getCurrentStation());
     }
 
