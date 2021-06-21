@@ -30,8 +30,7 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.getCurrentStation());
     }
 
-    @Test
-    public void shouldNextStation2() {
+ 
 
         RadioAdvanced radio = new RadioAdvanced();
 
@@ -273,12 +272,7 @@ class RadioAdvancedTest {
         assertFalse(Radio.isOn());
     }
 
-    @Test
-    @Disabled
-    public void shouldThrowNPE() {
-        Radio radio = new Radio();
-        assertEquals(0, radio.name.length());
-    }
+
 
     @Test
     public void shouldChangeFields() {

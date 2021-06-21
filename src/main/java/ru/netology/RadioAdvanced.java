@@ -1,12 +1,12 @@
 package ru.netology;
 
-public class RadioAdvanced<currentStation, minStation> {
+public class RadioAdvanced{
     private String name;
     private int currentStation = 0;
     private int maxStation = 9;
     private int minStation = 0;
     private int currentVolume = 0;
-    private int maxVolumeLevel = 10;
+    private int maxVolumeLevel = 100;
     private int minVolumeLevel = 0;
     private boolean on;
 

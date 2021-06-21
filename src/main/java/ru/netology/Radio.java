@@ -1,16 +1,32 @@
 package ru.netology;
 
-public class Radio {
 
 
+    public class Radio {
+      public int currentStation;
+        String name;
 
-    String name;
-    int currentStation = 0;
-    int MaxStation = 9;
-    int MinStation = 0;
-    int currentVolume = 0;
-    int MaxVolumeLevel = 10;
-    int MinVolumeLevel = 0;
-    boolean on;
+        int maxStation = 10;
+        int minStation = 0;
+        int currentVolume;
+        int maxVolumeLevel = 100;
+        int minVolumeLevel = 0;
+        boolean on;
 
+
+    public Radio(int maxVolumeLevel, int minVolumeLevel, String name, int maxStation, int minStation, int currentStation, int currentVolume, boolean on) {
+        this.maxVolumeLevel = maxVolumeLevel;
+        this.minVolumeLevel = minVolumeLevel;
+        this.name = name;
+        this.maxStation = maxStation;
+        this.minStation = minStation;
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+        this.on = on;
+    }
+
+
+    public Radio() {
+
+    }
 }
